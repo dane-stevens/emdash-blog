@@ -17,7 +17,7 @@ const corsParams = {
     CORSRules: [
       {
         AllowedHeaders: ["*"],
-        AllowedMethods: ["PUT", "POST"],
+        AllowedMethods: ["PUT", "POST", "GET", "DELETE"],
         AllowedOrigins: [process.env.SITE_URL!],
         MaxAgeSeconds: 3000,
       },
