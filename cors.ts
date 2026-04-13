@@ -18,7 +18,8 @@ const corsParams = {
       {
         AllowedHeaders: ["*"],
         AllowedMethods: ["PUT", "POST", "GET", "DELETE"],
-        AllowedOrigins: [process.env.SITE_URL!],
+        // AllowedOrigins: [process.env.SITE_URL!],
+        AllowedOrigins: ["*"],
         MaxAgeSeconds: 3000,
       },
     ],
