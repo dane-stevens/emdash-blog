@@ -29,6 +29,7 @@ export default defineConfig({
         // publicUrl: process.env.S3_PUBLIC_URL, // Optional CDN URL
 			}),
 			plugins: [auditLogPlugin()],
+			siteUrl: process.env.SITE_URL
 		}),
 	],
 	fonts: [
