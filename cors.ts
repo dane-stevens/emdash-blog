@@ -1,5 +1,5 @@
 
-import { S3Client, PutBucketCorsCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutBucketCorsCommand, GetBucketCorsCommand } from "@aws-sdk/client-s3";
 
 // Set CORS Headers for Railway Bucket
 
@@ -29,6 +29,7 @@ async function setCors() {
     const command = new PutBucketCorsCommand(corsParams);
     const response = await client.send(command);
     console.log("CORS configuration applied:", response);
+    console.log('CORS RULES----', await client.send(new GetBucketCorsCommand({ Bucket: process.env.S3_BUCKET })))
   } catch (err) {
     console.error("Error setting CORS:", err);
   }
