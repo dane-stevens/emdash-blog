@@ -28,6 +28,10 @@ async function setCors() {
   try {
     const command = new PutBucketCorsCommand(corsParams);
     const response = await client.send(command);
+    console.log({
+      endpoint: process.env.S3_ENDPOINT,
+      bucket: process.env.S3_BUCKET
+    })
     console.log("CORS configuration applied:", response);
     console.log('CORS RULES----', await client.send(new GetBucketCorsCommand({ Bucket: process.env.S3_BUCKET })))
   } catch (err) {
