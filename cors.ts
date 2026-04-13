@@ -33,7 +33,7 @@ async function setCors() {
       bucket: process.env.S3_BUCKET
     })
     console.log("CORS configuration applied:", response);
-    console.log('CORS RULES----', await client.send(new GetBucketCorsCommand({ Bucket: process.env.S3_BUCKET })))
+    console.log('CORS RULES----', (await client.send(new GetBucketCorsCommand({ Bucket: process.env.S3_BUCKET }))).CORSRules)
   } catch (err) {
     console.error("Error setting CORS:", err);
   }
